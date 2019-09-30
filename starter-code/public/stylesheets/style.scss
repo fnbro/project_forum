@@ -2,6 +2,8 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   margin: 0; }
 
+* {box-sizing: border-box} 
+
 /*# sourceMappingURL=style.css.map */
 a {
   text-decoration: none; }
@@ -20,6 +22,9 @@ a:hover {
 
 #sportbookTitle :link, :visited, :hover {
   color: black; }
+
+
+/* Navbar properties   */
 
 #navbar {
   background: #1b805e;
@@ -42,5 +47,61 @@ a:hover {
 
 #navbar ul li {
   padding: 10px; }
+
+/* Sign Up Container */
+
+input[type=text], input[type=password] {
+  width: 300px;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1; }
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none; }
+
+.userForm {
+  border: 1px solid #ccc;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.container {
+  padding: 16px;
+}
+
+.container input {
+  margin: 10px 0 20px 0;
+}
+
+.containerSection {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
 
 /*# sourceMappingURL=style.css.map */

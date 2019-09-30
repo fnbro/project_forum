@@ -1,16 +1,27 @@
-<form id="form" action="/signup" method="POST">
+<form class="userForm" id="signupForm" action="/signup" method="POST">
   <div class="container">
+    <h1>Sign Up</h1>
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+    <label for="name">Name</label><br>
+    <input type="text" name="name" placeholder="Enter your name">
+    <br>
+    <label for="surname">Surname</label><br>
+    <input type="text" name="surname" placeholder="Enter your surname">
+    <br>
     <label for="username">Username</label><br>
-    <input type="text" name="username" placeholder="Your username">
-
+    <input type="text" name="username" placeholder="Enter your username">
+    <br>
     <label for="password">Password</label><br>
-    <input type="password" name="password" placeholder="********">
-
+    <input type="password" name="password" placeholder="Enter your password">
+    <br>
+    <label for="password">Confirm Password</label><br>
+    <input type="password" name="password" placeholder="Confirm your password">
+    <br>
     <button type="submit">Create account</button>
+
+    {{#if errorMessage}}
+    <div class="error-message">{{ errorMessage }}</div>
+    {{/if}}
   </div>
 </form>
-
-
-{{#if errorMessage}}
-<div class="error-message">{{ errorMessage }}</div>
-{{/if}}
