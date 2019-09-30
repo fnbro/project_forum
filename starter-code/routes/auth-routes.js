@@ -5,8 +5,6 @@ const User = require("../models/user");
 const bcrypt = require("bcryptjs");
 const bcryptSalt = 10;
 
-const session    = require("express-session");
-const MongoStore = require("connect-mongo")(session);
 
 router.get('/signup', (req, res, next) => {
     res.render('signup');
@@ -51,42 +49,8 @@ router.get('/signup', (req, res, next) => {
   
 
   router.get("/login", (req, res, next) => {
-    res.render("login");
+    res.render("auth/login");
   });
-
-  router.post("/login", (req, res, next) => {
-    const theUsername = req.body.username;
-    const thePassword = req.body.password;
-  
-    if (theUsername === "" || thePassword === "") {
-      res.render("login", {
-        errorMessage: "Please enter both, username and password to sign up."
-      });
-      return;
-    }
-  
-    User.findOne({ "username": theUsername })
-    .then(user => {
-        if (!user) {
-          res.render("login", {
-            errorMessage: "The username doesn't exist or the password is incorrect."
-          });
-          return;
-        }
-        if (bcrypt.compareSync(thePassword, user.password)) {
-          req.session.currentUser = user;
-          res.redirect("/");
-        } else {
-          res.render("login", {
-            errorMessage: "Incorrect password"
-          });
-        }
-    })
-    .catch(error => {
-      next(error);
-    })
-  });
-  
 
 
   module.exports = router;
