@@ -21,6 +21,9 @@ a:hover {
 #sportbookTitle :link, :visited, :hover {
   color: black; }
 
+
+/* Navbar properties   */
+
 #navbar {
   background: #1b805e;
   display: flex;
@@ -42,5 +45,8 @@ a:hover {
 
 #navbar ul li {
   padding: 10px; }
+
+
+
 
 /*# sourceMappingURL=style.css.map */
