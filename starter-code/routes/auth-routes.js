@@ -84,9 +84,9 @@ router.get('/signup', (req, res, next) => {
     })
     .catch(error => {
       next(error);
-    })
+    });
   });
-  
+
 
 
   module.exports = router;
