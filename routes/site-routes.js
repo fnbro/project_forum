@@ -18,12 +18,16 @@ router.get("/login", (req, res, next) => {
   res.render("login");
 });
 
-router.get('/secret', (req, res, next) => {
+router.get("/logout", (req, res, next) => {
+  res.render("logout");
+});
+
+router.get('/sportsbook', (req, res, next) => {
   if(!req.session.currentUser){
     res.redirect('/login');
     return;
   }
-  res.render('secret');
+  res.render('sportsbook');
 });                              
 
 
