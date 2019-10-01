@@ -4,7 +4,7 @@ body {
 
 * {
   box-sizing: border-box; }
-  
+
 a {
   text-decoration: none; }
 
@@ -100,3 +100,5 @@ button:hover {
 
 #signUpLink :hover {
   color: black; }
+
+/*# sourceMappingURL=style.css.map */
