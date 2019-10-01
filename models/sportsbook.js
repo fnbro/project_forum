@@ -4,7 +4,8 @@ const Schema   = mongoose.Schema;
 const sportsbookSchema = new Schema({
   team1: String,
   team2: String,
-  result: String
+  result: String,
+  userId: Number
 }, {
   timestamps: true
 });
