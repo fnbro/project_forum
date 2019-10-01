@@ -1,1 +1,24 @@
-HI
+<div id="sportbookContainer">
+  <div class="buttonsDiv">
+    <a href="/createSportsbook"><button id="createButton">Create Sportsbook</button></a>
+    {{!-- <a href="/editSportsbook"><button id="editButton">Edit Sportsbook</button></a> --}}
+  </div>
+  <div>
+    <div class="container">
+      <p>Team 1</p>
+      <p>vs.</p>
+      <p>Team 2</p>
+      <p>Win</p>
+      <p id="designHelper"></p>
+    </div>
+    {{#each allMatches}}
+    <div class="container">
+      <p>{{team1}}</p>
+      <p>vs.</p>
+      <p>{{team2}}</p>
+      <p>{{result}}</p>
+      <a href="/editSportsbook/{{id}}"><button id="editButton">Edit</button></a>
+    </div>
+    {{/each}}
+  </div>
+</div>
