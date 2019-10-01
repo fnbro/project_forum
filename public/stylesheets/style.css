@@ -132,4 +132,10 @@ button:hover {
 #sportbookContainer {
   text-align: center; }
 
+select {
+  margin-bottom: 20px; }
+
+#deleteBtn {
+  background-color: #9c1212; }
+
 /*# sourceMappingURL=style.css.map */
