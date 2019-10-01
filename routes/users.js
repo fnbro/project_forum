@@ -8,7 +8,7 @@ const bcryptSalt = 10;
 const session    = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 
-router.get("/users/edit/:id", (req, res, next) => {
+router.get("/:id", (req, res, next) => {
   const userId = req.params.id
 
   User.findOne({ _id: userId })
@@ -17,10 +17,8 @@ router.get("/users/edit/:id", (req, res, next) => {
       if (user._id.equals(req.user._id)) {
         res.render("user-form", { user });
       } else {
-        // no access for you!
         res.redirect(`/user/${user._id}`);
       }
-      
     })
     .catch(error => {
       throw new Error(error);
