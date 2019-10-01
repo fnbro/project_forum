@@ -1,5 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
+// const openLigaDB = new APIHandler('https://www.openligadb.de/api/');
 
-  console.log('IronGenerator JS imported successfully!');
-
-}, false);
+// openLigaDB.getAllMatches();

@@ -1,0 +1,23 @@
+<form id="createSportsbook" action="/createSportsbook" method="POST">
+  <div class="updateSportsbook">
+    <div>
+      <label for="team1">Team 1: </label><br>
+      <input type="text" name="team1" placeholder="Enter Team 1">
+    </div>
+    <div>
+      <label for="team2">Team 2: </label><br>
+      <input type="text" name="team2" placeholder="Enter Team 2">
+    </div>
+    <div>
+      <label for="result">Result: </label><br>
+      <select name="result" id="result">
+        <option value="1">Win Team 1</option>
+        <option value="X">Draw</option>
+        <option value="2">Win Team 2</option>
+      </select>
+    </div>
+    <div>
+      <button type="submit">Create Match</button>
+    </div>
+  </div>
+</form>
