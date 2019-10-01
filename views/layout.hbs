@@ -10,20 +10,24 @@
 </head>
 
 <body>
-
   <nav id="navbar">
     <a href="/"><img src="/images/football-icon.png" alt="FOOTBALL-ICON"></a>
     <a id="sportbookTitle" href="/">
       <h2>SPORTBOOK ARCHIVE</h2>
     </a>
     <ul>
+      {{#if currentUser}}
+      <li><a href="/">Home</a></li>
+      <li><a href="/sportsbook">Sportbook</a></li>
+      <li><a href="/logout">Logout</a></li>
+      {{else}}
       <li><a href="/">Home</a></li>
       <li><a href="/sportsbook">Sportbook</a></li>
       <li><a href="/signup">Sign Up</a></li>
       <li><a href="/login">Login</a></li>
     </ul>
-  </nav>
-
+    {{/if}}
+</nav>
 <div class="containerSection">
   {{{body}}}
 </div>
