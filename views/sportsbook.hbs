@@ -1,7 +1,7 @@
 <div id="sportbookContainer">
   <div class="buttonsDiv">
     <a href="/createSportsbook"><button id="createButton">Create Sportsbook</button></a>
-    {{!-- <a href="/editSportsbook"><button id="editButton">Edit Sportsbook</button></a> --}}
+    <button onclick="updateResult();return false;" id="updateResult">Refresh Result</button>
   </div>
   <div>
     <div class="container">
@@ -10,6 +10,7 @@
       <p>Team 2</p>
       <p>Win</p>
       <p id="designHelper"></p>
+      <p>Result</p>
     </div>
     {{#each allMatches}}
     <div class="container">
@@ -18,6 +19,7 @@
       <p>{{team2}}</p>
       <p>{{result}}</p>
       <a href="/editSportsbook/{{id}}"><button id="editButton">Edit</button></a>
+      <div class="resultBox"><p id="realResult">Pending</p></div>
     </div>
     {{/each}}
   </div>

@@ -119,15 +119,14 @@ button:hover {
 }
 
 #designHelper {
-  width:140px;
+  width: 120px;
 }
 
 .container {
   border: 1px solid black;
-  width: 800px;
+  width: 1000px;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
   margin-bottom: -1px;
   align-items: center;
 }
@@ -152,4 +151,13 @@ select {
 
 #deleteBtn {
   background-color: rgb(156, 18, 18);
+}
+
+.resultBox {
+  margin-left: 30px;
+  margin-right: 10px;
+}
+
+#realResult {
+  color: rgb(241, 238, 83);
 }
