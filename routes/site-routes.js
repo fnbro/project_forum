@@ -18,13 +18,8 @@ router.get("/login", (req, res, next) => {
   res.render("login");
 });
 
-router.get('/secret', (req, res, next) => {
-  console.log(req.session.currentUser)
-  if(!req.session.currentUser){
-    res.redirect('/login');
-    return;
-  }
-  res.render('secret');
+router.get('/sportsbook', (req, res, next) => {
+  res.render('sportsbook');
 });                              
 
 
