@@ -18,6 +18,10 @@ router.get("/login", (req, res, next) => {
   res.render("login");
 });
 
+router.get("/logout", (req, res, next) => {
+  res.render("logout");
+});
+
 router.get('/sportsbook', (req, res, next) => {
   if(!req.session.currentUser){
     res.redirect('/login');
