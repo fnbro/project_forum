@@ -133,7 +133,9 @@ button:hover {
   text-align: center; }
 
 select {
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  width: 300px;
+  margin: 8px 0; }
 
 #deleteBtn {
   background-color: #9c1212; }

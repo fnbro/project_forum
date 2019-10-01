@@ -52,11 +52,11 @@ router.get('/editSportsbook/:Id', (req, res, next) => {
   const matchId = req.params.Id;
   Sportsbook.findById(matchId)
     .then(match => {
-      match.example =
+      match.currentResult =
         `
         <option value="1">Win Team 1</option>
-        <option ${match.result === 'X' &&' selected '} value="X">Draw</option>
-        <option ${match.result == 2 &&' selected '} value="2">Win Team 2</option>
+        <option ${match.result === 'X' && ' selected '} value="X">Draw</option>
+        <option ${match.result == 2 && ' selected '} value="2">Win Team 2</option>
       `
       res.render('editSportsbook', match);
     })
@@ -83,13 +83,13 @@ router.post('/deleteSportsbook/:Id', (req, res, next) => {
   const matchId = req.params.Id;
   console.log("Now i delete")
   Sportsbook.findByIdAndRemove(matchId)
-  .then((match) => {
-    console.log("Ill delete------")
-    res.redirect('/sportsbook');
-  })
-  .catch((err) => {
-    console.log(err);
-  })
+    .then((match) => {
+      console.log("Ill delete------")
+      res.redirect('/sportsbook');
+    })
+    .catch((err) => {
+      console.log(err);
+    })
 })
 
 module.exports = router;
