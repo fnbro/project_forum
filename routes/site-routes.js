@@ -19,6 +19,10 @@ router.get("/login", (req, res, next) => {
 });
 
 router.get('/sportsbook', (req, res, next) => {
+  if(!req.session.currentUser){
+    res.redirect('/login');
+    return;
+  }
   res.render('sportsbook');
 });                              
 

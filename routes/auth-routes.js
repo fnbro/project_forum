@@ -15,6 +15,9 @@ router.get('/signup', (req, res, next) => {
   router.post("/signup", (req, res, next) => {
     const username = req.body.username;
     const password = req.body.password;
+    const surname = req.body.surname;
+    const name = req.body.surname;
+    const passwordconfirm = req.body.passwordconfirm;
     const salt = bcrypt.genSaltSync(bcryptSalt);
     const hashPass = bcrypt.hashSync(password, salt);
     if (username === "" || password === "") {
@@ -30,19 +33,26 @@ router.get('/signup', (req, res, next) => {
             errorMessage: "The username "+username+" already exists!"
           });
           return;
+        
         }
         const salt = bcrypt.genSaltSync(bcryptSalt);
         const hashPass = bcrypt.hashSync(password, salt);
+        if (password === passwordconfirm) {
         User.create({
+          surname,
+          name,
           username,
           password: hashPass
         })
           .then(() => {
-            res.redirect("/");
+            res.redirect("/login");
           })
           .catch(error => {
             console.log(error);
-          })
+          })}
+          return res.render("signup", {
+          errorMessage: "Write the same password"
+          });
       })
       .catch(error => {
         next(error);

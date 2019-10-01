@@ -3,7 +3,9 @@ const Schema   = mongoose.Schema;
 
 const userSchema = new Schema({
   username: String,
-  password: String
+  password: String,
+  surname: String,
+  name: String
 }, {
   timestamps: true
 });
