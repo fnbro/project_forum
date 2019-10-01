@@ -28,9 +28,7 @@ router.get('/sportsbook', (req, res, next) => {
   if(!req.session.currentUser){
     res.redirect('/login');
     return;
-  }
-  res.render('sportsbook');
-});                              
+  }                     
   Sportsbook.find()
     .then(allMatches => {
       res.render('sportsbook', { allMatches });
