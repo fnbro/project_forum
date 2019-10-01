@@ -37,13 +37,6 @@ app.use(session({
   })
 }));
 
-app.use((req, res, next) => {
-  if(req.session.currentUser){
-    res.locals.currentUser = req.session.currentUser;
-  }
-  next();
-})
-
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -67,6 +60,7 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator';
+
 
 
 const site = require('./routes/site-routes');
