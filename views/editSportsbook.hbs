@@ -1,0 +1,27 @@
+<div>
+  <form id="editSportsbook" action="/editSportsbook/{{id}}" method="POST">
+    <div class="updateSportsbook">
+      <div>
+        <label for="team1">Team 1: </label><br>
+        <input type="text" name="team1" placeholder="Enter Team 1" value="{{team1}}">
+      </div>
+      <div>
+        <label for="team2">Team 2: </label><br>
+        <input type="text" name="team2" placeholder="Enter Team 2" value="{{team2}}">
+      </div>
+      <div>
+        <label for="result">Result: </label><br>
+        <select name="result" id="result">
+          {{{currentResult}}}
+        </select>
+      </div>
+      <div>
+        <button type="submit">Edit Match</button>
+      </div>
+    </div>
+  </form>
+
+  <form action='/deleteSportsbook/{{id}}' method="POST">
+    <button type="submit" id="deleteBtn">Delete</button>
+  </form>
+</div>
