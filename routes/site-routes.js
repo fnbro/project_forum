@@ -25,7 +25,7 @@ router.get("/logout", (req, res, next) => {
 });
 
 
-router.get('/sportsbook/:id', (req, res, next) => {
+router.get('/sportsbook', (req, res, next) => {
   if(!req.session.currentUser){
     res.redirect('/login');
     return;
