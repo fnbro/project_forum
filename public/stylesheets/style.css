@@ -141,9 +141,15 @@ select {
 
 .resultBox {
   margin-left: 30px;
-  margin-right: 10px; }
+  margin-right: 10px;
+  width: 130px;
+  height: 45px; }
 
-#realResult {
+.realResult {
   color: #f1ee53; }
+
+#sportbook {
+  position: relative;
+  left: 50%; }
 
 /*# sourceMappingURL=style.css.map */
