@@ -1,18 +1,26 @@
 <div>
-  <form id="editSportsbook" action="/editSportsbook/{{id}}" method="POST">
+  <form id="editSportsbook" action="/editSportsbook/{{match.id}}" method="POST">
     <div class="updateSportsbook">
       <div>
         <label for="team1">Team 1: </label><br>
-        <input type="text" name="team1" placeholder="Enter Team 1" value="{{team1}}">
+        <select name="team1" id="team1">
+          {{#each teams}}
+          <option value="{{this.TeamName}}" {{#equal ../match.team1 TeamName}} {{/equal}}>{{this.TeamName}}</option>
+          {{/each}}
+        </select>
       </div>
       <div>
         <label for="team2">Team 2: </label><br>
-        <input type="text" name="team2" placeholder="Enter Team 2" value="{{team2}}">
+        <select name="team2" id="team2">
+          {{#each teams}}
+          <option value="{{this.TeamName}}" {{#equal ../match.team2 TeamName}} {{/equal}}>{{this.TeamName}}</option>
+          {{/each}}
+        </select>
       </div>
       <div>
         <label for="result">Result: </label><br>
         <select name="result" id="result">
-          {{{currentResult}}}
+          {{{match.currentResult}}}
         </select>
       </div>
       <div>
