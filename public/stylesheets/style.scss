@@ -156,8 +156,10 @@ select {
 .resultBox {
   margin-left: 30px;
   margin-right: 10px;
+  width: 130px;
+  height: 45px;
 }
 
-#realResult {
+.realResult {
   color: rgb(241, 238, 83);
 }
