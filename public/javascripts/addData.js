@@ -1,15 +1,24 @@
 
 
-// //seed the database 
+//seed the database 
 
-// require('dotenv').config();
+require('dotenv').config();
 
-// const mongoose = require("mongoose");
-// const Team = require("../../models/team");
-// const seeds = require("./seeds")
+const mongoose = require("mongoose");
+const Team = require("../../models/team");
+const seeds = require("./seeds")
 
-// mongoose
-//   .connect(`mongodb+srv://Admin:Admin@cluster0-nxq1w.mongodb.net/test?retryWrites=true&w=majority`, {useNewUrlParser: true})
+mongoose
+  .connect(`mongodb+srv://Admin:Admin@cluster0-nxq1w.mongodb.net/test?retryWrites=true&w=majority`, {useNewUrlParser: true})
+  .then(x => {
+    console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
+  })
+  .catch(err => {
+    console.error('Error connecting to mongo', err)
+  });
+
+//   mongoose
+//   .connect(`${process.env.MONGO_URI}`, {useNewUrlParser: true})
 //   .then(x => {
 //     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
 //   })
@@ -17,7 +26,9 @@
 //     console.error('Error connecting to mongo', err)
 //   });
 
-// Team.insertMany(seeds).then(data => 
+Team.insertMany(seeds).then(data => 
   
-// mongoose.disconnect()
-//   )
+mongoose.disconnect()
+  )
+
+  
