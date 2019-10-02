@@ -20,9 +20,9 @@ function updateResult() {
         let myMatch = matchData.filter(match => match.Team1.TeamName == firstTeam && match.Team2.TeamName == secondTeam);
         if (myMatch && myMatch[0].MatchIsFinished == true) {
           if (myMatch[0].MatchResults[0].PointsTeam1 > myMatch[0].MatchResults[0].PointsTeam2) realResult = "1"
-          else if (myMatch[0].MatchResults[0].PointsTeam1 = myMatch[0].MatchResults[0].PointsTeam2) realResult = "X"
+          else if (myMatch[0].MatchResults[0].PointsTeam1 == myMatch[0].MatchResults[0].PointsTeam2) realResult = "X"
           else if (myMatch[0].MatchResults[0].PointsTeam1 < myMatch[0].MatchResults[0].PointsTeam2) realResult = "2"
-
+          console.log(realResult)
           if (realResult == theResult) insertUpdatedResult("win", i)
           else if (realResult != theResult) insertUpdatedResult("lose", i)
         }
