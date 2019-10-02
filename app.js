@@ -60,7 +60,15 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
-
+hbs.registerHelper('equal', function(lvalue, rvalue) {
+  console.log(lvalue, rvalue);
+  if( lvalue === rvalue ) {
+      return "selected";
+  } 
+  else {
+    return "";
+  }
+});
 
 
 // default value for title local

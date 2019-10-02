@@ -9,7 +9,7 @@
 // const seeds = require("./seeds")
 
 // mongoose
-//   .connect(`${process.env.MONGO_URI}`, {useNewUrlParser: true})
+//   .connect(`mongodb+srv://Admin:Admin@cluster0-nxq1w.mongodb.net/test?retryWrites=true&w=majority`, {useNewUrlParser: true})
 //   .then(x => {
 //     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
 //   })
