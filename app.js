@@ -11,8 +11,6 @@ const path         = require('path');
 const session    = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 
-
-
 mongoose
   .connect(`${process.env.MONGO_URI}`, {useNewUrlParser: true})
   .then(x => {
@@ -30,7 +28,7 @@ const app = express();
 // Middleware Setup
 app.use(session({
   secret: "basic-auth-secret",
-  cookie: { maxAge: 60000 },
+  cookie: { maxAge: 60000000 },
   store: new MongoStore({
     mongooseConnection: mongoose.connection,
     ttl: 24 * 60 * 60 // 1 day
@@ -75,6 +73,7 @@ app.use('/', site);
 
 const auth = require('./routes/auth-routes');
 app.use('/', auth);
+
 
 
 module.exports = app;
