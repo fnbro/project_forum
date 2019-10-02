@@ -8,9 +8,8 @@ const bcryptSalt = 10;
 const session    = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 
-router.get("/:id", (req, res, next) => {
+router.get("/:id/sportsbook", (req, res, next) => {
   const userId = req.params.id
-
   User.findOne({ _id: userId })
     .then(user => {
       console.log(user)

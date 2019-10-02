@@ -5,7 +5,9 @@ const sportsbookSchema = new Schema({
   team1: String,
   team2: String,
   result: String,
-  userId: Number
+  userid: { type: Schema.Types.ObjectId, ref: 'User' }
+
+
 }, {
   timestamps: true
 });
