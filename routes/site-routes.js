@@ -41,7 +41,7 @@ router.get('/sportsbook', (req, res, next) => {
 });
 
 
-router.get('/createSportsbook/:id', (req, res, next) => {
+router.get('/createSportsbook', (req, res, next) => {
   res.render('createSportsbook');
 });
 
