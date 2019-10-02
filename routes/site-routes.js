@@ -24,12 +24,13 @@ router.get("/logout", (req, res, next) => {
   res.render("logout");
 });
 
-router.get('/sportsbook', (req, res, next) => {
+
+router.get('/sportsbook/:id', (req, res, next) => {
   if(!req.session.currentUser){
     res.redirect('/login');
     return;
-  }                     
-  Sportsbook.find()
+  } 
+  Sportsbook.find({userid:req.session.currentUser})
     .then(allMatches => {
       res.render('sportsbook', { allMatches });
     })
@@ -39,13 +40,15 @@ router.get('/sportsbook', (req, res, next) => {
     })
 });
 
-router.get('/createSportsbook', (req, res, next) => {
+
+router.get('/createSportsbook/:id', (req, res, next) => {
   res.render('createSportsbook');
 });
 
 router.post('/createSportsbook', (req, res, next) => {
   const { team1, team2, result } = req.body;
-  const newSportsbook = new Sportsbook({ team1, team2, result });
+  const userid = req.session.currentUser;
+  const newSportsbook = new Sportsbook({ team1, team2, result, userid });
   newSportsbook.save()
     .then((sportsbooks) => {
       res.redirect('/sportsbook');
