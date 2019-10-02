@@ -14,12 +14,12 @@
     </div>
     {{#each allMatches}}
     <div class="container">
-      <p>{{team1}}</p>
+      <p class="team1ToCompare">{{team1}}</p>
       <p>vs.</p>
-      <p>{{team2}}</p>
-      <p>{{result}}</p>
+      <p class="team2ToCompare">{{team2}}</p>
+      <p class="resultsToCompare">{{result}}</p>
       <a href="/editSportsbook/{{id}}"><button id="editButton">Edit</button></a>
-      <div class="resultBox"><p id="realResult">Pending</p></div>
+      <div class="resultBox"><p class="realResult">Pending</p></div>
     </div>
     {{/each}}
   </div>
