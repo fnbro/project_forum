@@ -28,7 +28,7 @@ router.post("/signup", (req, res, next) => {
   }
   User.findOne({ "username": username })
     .then(user => {
-      if (user === null) {
+      if (user !== null) {
         res.render("signup", {
           errorMessage: "The username " + username + " already exists!"
         });
